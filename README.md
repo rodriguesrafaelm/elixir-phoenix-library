@@ -1,19 +1,29 @@
 # BibliotecaPhoenix
+Usando o Phoenix pra criar uma API simples de biblioteca.<br><br>
 
-To start your Phoenix server:
+## Rotas
+GET    /biblioteca/livros
+GET    /biblioteca/livros/:id
+POST   /biblioteca/livros
+PATCH  /biblioteca/livros/:id
+PUT    /biblioteca/livros/:id
+DELETE /biblioteca/livros/:id
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Livros
+Estão organizados por:
+"titulo": "...."
+"autor":  "...."
+<br>
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Obs
+Formato para post:
+{
+  "titulo": "...."
+  "autor": "...."
+}
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+PATCH e PUT(pode ser passado apenas o titulo ou o autor):
+{
+  "titulo": "...."
+  "autor": "...."
+}

@@ -22,14 +22,14 @@ defmodule BibliotecaPhoenixWeb.LivroControllerTest do
   describe "index" do
     test "lists all livros", %{conn: conn} do
       conn = get(conn, Routes.livro_path(conn, :index))
-      assert json_response(conn, 200)["data"] == []
+      assert json_response(conn, 200)["livros"] == []
     end
   end
 
   describe "create livro" do
     test "renders livro when data is valid", %{conn: conn} do
-      conn = post(conn, Routes.livro_path(conn, :create), livro: @create_attrs)
-      assert %{"id" => id} = json_response(conn, 201)["data"]
+      conn = post(conn, Routes.livro_path(conn, :create), @create_attrs)
+      assert %{"id" => id} = json_response(conn, 201)["livro"]
 
       conn = get(conn, Routes.livro_path(conn, :show, id))
 
@@ -37,11 +37,11 @@ defmodule BibliotecaPhoenixWeb.LivroControllerTest do
                "id" => ^id,
                "autor" => "some autor",
                "titulo" => "some titulo"
-             } = json_response(conn, 200)["data"]
+             } = json_response(conn, 200)["livro"]
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
-      conn = post(conn, Routes.livro_path(conn, :create), livro: @invalid_attrs)
+      conn = post(conn, Routes.livro_path(conn, :create), @invalid_attrs)
       assert json_response(conn, 422)["errors"] != %{}
     end
   end
@@ -51,7 +51,7 @@ defmodule BibliotecaPhoenixWeb.LivroControllerTest do
 
     test "renders livro when data is valid", %{conn: conn, livro: %Livro{id: id} = livro} do
       conn = put(conn, Routes.livro_path(conn, :update, livro), livro: @update_attrs)
-      assert %{"id" => ^id} = json_response(conn, 200)["data"]
+      assert %{"id" => ^id} = json_response(conn, 200)["livro"]
 
       conn = get(conn, Routes.livro_path(conn, :show, id))
 
@@ -59,7 +59,7 @@ defmodule BibliotecaPhoenixWeb.LivroControllerTest do
                "id" => ^id,
                "autor" => "some updated autor",
                "titulo" => "some updated titulo"
-             } = json_response(conn, 200)["data"]
+             } = json_response(conn, 200)["livro"]
     end
 
     test "renders errors when data is invalid", %{conn: conn, livro: livro} do

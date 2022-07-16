@@ -5,10 +5,10 @@ defmodule BibliotecaPhoenixWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/livros", BibliotecaPhoenixWeb do
+  scope "/biblioteca", BibliotecaPhoenixWeb do
     pipe_through :api
 
-    resources "/", LivroController, only: [:index, :show]
+    resources "/livros", LivroController, except: [:new, :edit]
 
   end
 end

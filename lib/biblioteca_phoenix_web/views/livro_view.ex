@@ -3,11 +3,11 @@ defmodule BibliotecaPhoenixWeb.LivroView do
   alias BibliotecaPhoenixWeb.LivroView
 
   def render("index.json", %{livros: livros}) do
-    %{data: render_many(livros, LivroView, "livro.json")}
+    %{livros: render_many(livros, LivroView, "livro.json")}
   end
 
   def render("show.json", %{livro: livro}) do
-    %{data: render_one(livro, LivroView, "livro.json")}
+    %{livro: render_one(livro, LivroView, "livro.json")}
   end
 
   def render("livro.json", %{livro: livro}) do

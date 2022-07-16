@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :biblioteca_phoenix, BibliotecaPhoenix.Repo,
   username: "postgres",
-  password: "analise",
+  password: "postgres",
   hostname: "localhost",
   database: "biblioteca_phoenix_dev",
   stacktrace: true,

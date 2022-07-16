@@ -2,28 +2,28 @@
 Usando o Phoenix pra criar uma API simples de biblioteca.<br><br>
 
 ## Rotas
-GET    /biblioteca/livros
-GET    /biblioteca/livros/:id
-POST   /biblioteca/livros
-PATCH  /biblioteca/livros/:id
-PUT    /biblioteca/livros/:id
-DELETE /biblioteca/livros/:id
+GET    /biblioteca/livros <br>
+GET    /biblioteca/livros/:id <br>
+POST   /biblioteca/livros <br>
+PATCH  /biblioteca/livros/:id <br>
+PUT    /biblioteca/livros/:id <br>
+DELETE /biblioteca/livros/:id <br>
 
 ## Livros
-Estão organizados por:
-"titulo": "...."
-"autor":  "...."
+Estão organizados por: <br>
+"titulo": "...." <br>
+"autor":  "...." <br>
 <br>
 
-## Obs
-Formato para post:
-{
-  "titulo": "...."
-  "autor": "...."
-}
+## observações
+Formato para post: <br>
+{ <br>
+  "titulo": "...." <br>
+  "autor": "...." <br>
+} <br>
 
-PATCH e PUT(pode ser passado apenas o titulo ou o autor):
-{
-  "titulo": "...."
-  "autor": "...."
+PATCH e PUT(pode ser passado apenas o titulo ou o autor): <br>
+{ <br>
+  "titulo": "...." <br>
+  "autor": "...." <br>
 }

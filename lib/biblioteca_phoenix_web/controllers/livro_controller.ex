@@ -11,9 +11,7 @@ defmodule BibliotecaPhoenixWeb.LivroController do
     render(conn, "index.json", livros: livros)
   end
 
-  def create(conn, %{"titulo" => titulo, "autor" => autor}) do
-    livro_params = %{titulo: titulo, autor: autor}
-
+  def create(conn, %{"titulo" => _titulo, "autor" => _autor} = livro_params) do
     with {:ok, %Livro{} = livro} <- Biblioteca.create_livro(livro_params) do
       conn
       |> put_status(:created)
